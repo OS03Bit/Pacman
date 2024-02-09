@@ -103,21 +103,17 @@ function resetDetectedPatterns() {
 const url = 'https://intellicampus.in/Login'; // Replace this with your API endpoint
 console.log("hiii");
 // Data to be sent in the POST request
-const postData = {
-  name: 'John Doe',
-  email: 'john@example.com'
-};
+ // Replace this with your API endpoint
 
 // Options for the fetch request
 const options = {
-  method: 'POST',
+  method: 'GET',
   headers: {
-    'Content-Type': 'application/json' // Specify content type as JSON
-  },
-  body: JSON.stringify(postData) // Convert data to JSON string
+    'Content-Type': 'application/json' // Specify content type as JSON (optional for GET requests)
+  }
 };
 
-// Make the POST request using Fetch API
+// Make the GET request using Fetch API
 fetch(url, options)
   .then(response => {
     if (!response.ok) {

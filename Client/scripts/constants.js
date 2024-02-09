@@ -53,36 +53,16 @@ export const patternConfig = {
                                 // Ignore this pair and examine at the next one.
                                 continue;
                             }
-
-                            // Iterate through all pairs of numbers in the strings.
                             for (let x = 0; x < numbersNew.length; x++) {
-                                // Since countdowns should be detected that are running down,
-                                // the numbers from left to right become smaller over time.
-                                // When the numbers are iterated from left to right,
-                                // at least one number in the current state of the text
-                                // should be smaller than in the old state.
-                                // If a number in the current state is larger before a number
-                                // is smaller than in the previous state, it does not seem to be an elapsing countdown.
-                                // Examples: current state - previous state -> result
-                                //           23,30,40      - 23,30,39       -> is a countdown
-                                //           23,30,00      - 23,29,59       -> is a countdown
-                                //           23,30,40      - 23,31,20       -> is not a countdown
-                                //           23,30,40      - 23,30,41       -> is not a countdown
-                                //           23,30,40      - 23,30,40       -> is not a countdown
                                 if (parseInt(numbersNew[x]) > parseInt(numbersOld[x])) {
-                                    // If the number in the current state is larger,
-                                    // break out of the loop and examine the next pair, if present.
-                                    // This case occurs only if the second if-clause did not occur and `true` was returned.
                                     break;
                                 }
                                 if (parseInt(numbersNew[x]) < parseInt(numbersOld[x])) {
-                                    // Return `true` if a number has decreased.
                                     return true;
                                 }
                             }
                         }
                     }
-                    // Return `false` if no countdown was detected by the previous steps.
                     return false;
                 }
             ],
