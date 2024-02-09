@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const color = require('colors');
 const morgan = require('morgan');
+const db = require("./config/mongodb");
 
 dotenv.config()
 

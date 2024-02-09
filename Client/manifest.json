@@ -1,34 +1,50 @@
 {
     "manifest_version": 3,
     "name": "Pacman",
-    "version": "0.0.1",
-    "description": "Empower users by detecting and eliminating dark patterns, fostering transparency and ethical design in the digital space.",
-    "author": ["Om Sinkar", "Souptik Taran"],
-    "icons" : {
-        "48": "/Images/Icons/default.png"
-    },
-    "action" : {
-        "default_icon" : {
-            "48": "/Images/Icons/default.png"
-        },
-        "default_title" : "Empowering users by detecting and eliminating dark patterns, fostering transparency and ethical design in the digital space",
-        "default_popup" : "popup.html"
-    },
-    "background": {
-        "service_worker": "background.js"
+    "description": "Dark Pattern Detector",
+    "version": "1.0.0",
+    "icons": {
+        "48": "/images/yellowicon.png"
     },
     "content_scripts": [
         {
-            "matches": ["<all_urls>"],
-            "js": ["contentScript.js"], 
-            "css": ["contentCSS.css"]
+            "js": [
+                "scripts/content.js"
+            ],
+            "css": [
+                "stylesheets/style.css"
+            ],
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "run_at": "document_idle"
         }
     ],
     "permissions": [
         "activeTab",
         "tabs",
-        "alarms",
-        "webNavigation",
         "storage"
-    ]
+    ],
+    "action": {
+        "default_popup": "popup/popup.html", 
+        "default_icon" : {
+            "48": "/images/yellowicon.png"
+        }
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "scripts/constants.js"
+            ],
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    }
+    
 }
