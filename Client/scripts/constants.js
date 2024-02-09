@@ -12,7 +12,7 @@ export const patternConfig = {
                          * Regular expression for a usual countdown with or without words.
                          * @constant
                          */
-                        const reg = /(?:\d{1,2}\s*:\s*){1,3}\d{1,2}|(?:\d{1,2}\s*(?:days?|hours?|minutes?|seconds?|tage?|stunden?|minuten?|sekunden?|[a-zA-Z]{1,3}\.?)(?:\s*und)?\s*){2,4}/gi;
+                        const reg = /(?:\d{1,5}\s*(?::|h(?:ou)?rs?|m(?:in(?:ute)?s?)?|s(?:ec(?:ond)?s?)?|[a-zA-Z]{1,3})\s*){1,4}/gi;
 
                         /**
                          * Regular expression for strings that match the regular expression for countdowns
@@ -20,7 +20,7 @@ export const patternConfig = {
                          * A maximum of 4 numbers for days, hours, minutes and seconds is expected.
                          * @constant
                          */
-                        const regBad = /(?:\d{1,2}\s*:\s*){4,}\d{1,2}|(?:\d{1,2}\s*(?:days?|hours?|minutes?|seconds?|tage?|stunden?|minuten?|sekunden?|[a-zA-Z]{1,3}\.?)(?:\s*und)?\s*){5,}/gi;
+                        const regBad = /(?:\d{1,5}\s*(?::|h(?:ou)?rs?|m(?:in(?:ute)?s?)?|s(?:ec(?:ond)?s?)?|[a-zA-Z]{1,3})\s*){5,}/gi;
 
                         // If matches for "wrong" countdowns are found with the second regular expression,
                         // remove these parts from the string.
