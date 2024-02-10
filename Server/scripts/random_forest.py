@@ -5,7 +5,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier
 
 # Load the dataset
-data = pd.read_csv('/Users/thushara/Documents/DPBH/sentences.csv')
+data = pd.read_csv('Pacman/Server/scripts/RF/sentences.csv')
 # Split the data into features (X) and labels (y)
 X = data['text']
 y_label = data['label']
@@ -24,7 +24,7 @@ def predict_dark_pattern(statement):
     label_prediction = rf_classifier_label.predict(statement_vectorized)[0]
     return label_prediction
 
-input_file_path = '/Users/thushara/Documents/DPBH/RF/input_paragraph.txt'  # Update with your file path
+input_file_path = 'Pacman/Server/scripts/RF/input_paragraph.txt'  # Update with your file path
 with open(input_file_path, 'r', encoding='utf-8') as file:
     input_paragraph = file.read()
 
@@ -39,7 +39,7 @@ for sentence in sentences:
     statement = ' '.join(tokens)
     # Predict dark pattern for the statement
     label_prediction = predict_dark_pattern(statement)
-    if label_prediction == '0':
+    if label_prediction == 0:
         pass
     else: 
         print(f"Sentence: {sentence.strip()}")

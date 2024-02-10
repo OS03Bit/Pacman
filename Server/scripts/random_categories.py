@@ -5,7 +5,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier
 
 # Load the dataset
-data = pd.read_csv('/Users/thushara/Documents/DPBH/RF/sentences.csv')
+data = pd.read_csv('Pacman/Server/scripts/RF/sentences.csv')
 # Split the data into features (X) and labels (y)
 X = data['text']
 y_label = data['label']
@@ -29,24 +29,87 @@ def predict_dark_pattern(statement):
 def get_category(label):
     return categories[data[data['label'] == label].index[0]]
 
-input_file_path = '/Users/thushara/Documents/DPBH/RF/input_paragraph.txt'  # Update with your file path
+input_file_path = 'Pacman/Server/scripts/RF/input_paragraph.txt'  # Update with your file path
 with open(input_file_path, 'r', encoding='utf-8') as file:
     input_paragraph = file.read()
 
 # Tokenize the input paragraph into sentences
 sentences = sent_tokenize(input_paragraph)
+# def find_patterns(sentences):
+#     # Create a dictionary to store sentences to ignore
+#     sentences_to_ignore = {
+#         "Flipkart Internet Private Limited,.": True,
+#         "Work hard and no play?": True,
+#         "Amazon Great India Sale": True,
+#         "Sale":True,
+#         "items.":True,
+#     }
 
-# Predict dark patterns for each sentence
-for sentence in sentences:
-    # Tokenize the sentence
-    tokens = nltk.word_tokenize(sentence)
-    # Join tokens to form a statement
-    statement = ' '.join(tokens)
-    # Predict dark pattern for the statement
-    label_prediction = predict_dark_pattern(statement)
-    if label_prediction == '1':
-        category = get_category(label_prediction)
-        print(f"Sentence: {sentence.strip()}")
-        print(f"Label Prediction: {label_prediction}")
-        print(f"Category: {category}")
-        print()
+#     # Predict dark patterns for each sentence
+#     for sentence in sentences:
+#         # Check if the sentence exists in the ignore dictionary
+#         if sentence in sentences_to_ignore:
+#             continue  # Skip prediction for this sentence
+        
+#         # Tokenize the sentence
+#         tokens = nltk.word_tokenize(sentence)
+#         # Join tokens to form a statement
+#         statement = ' '.join(tokens)
+#         label_prediction = predict_dark_pattern(statement)
+#         if label_prediction == 1:
+#             category = get_category(label_prediction)
+
+#             # print(f"Sentence: {sentence.strip()}")
+#             # print(f"Label Prediction: {label_prediction}")
+#             # print(f"Category: {category}")
+#             # print()
+#         else:
+#             # If the prediction is not a dark pattern, add it to the ignore dictionary
+#             sentences_to_ignore[sentence] = True
+import os
+
+def find_patterns(sentences):
+    # Create lists to store sentences, labels, and categories
+    all_sentences = []
+    all_categories = []
+
+    # Create a dictionary to store sentences to ignore
+    sentences_to_ignore = {
+        "Flipkart Internet Private Limited,.": True,
+        "Work hard and no play?": True,
+        "Amazon Great India Sale": True,
+        "Sale":True,
+        "items.":True,
+    }
+
+    # Predict dark patterns for each sentence
+    for sentence in sentences:
+        # Check if the sentence exists in the ignore dictionary
+        if sentence in sentences_to_ignore:
+            continue  # Skip prediction for this sentence
+        
+        # Tokenize the sentence
+        tokens = nltk.word_tokenize(sentence)
+        # Join tokens to form a statement
+        statement = ' '.join(tokens)
+        label_prediction = predict_dark_pattern(statement)
+        if label_prediction == 1:
+            category = get_category(label_prediction)
+            all_sentences.append(sentence.strip())
+            all_categories.append(category)
+        else:
+            # If the prediction is not a dark pattern, add it to the ignore dictionary
+            sentences_to_ignore[sentence] = True
+    
+    # Write sentences to 'sentences.txt'
+    with open('Pacman/Server/scripts/RF/sentences.txt', 'w', encoding='utf-8') as sentences_file:
+        for sentence in all_sentences:
+            sentences_file.write(sentence + '\n')
+
+    # Write categories to 'categories.txt'
+    with open('Pacman/Server/scripts/RF/categories.txt', 'w', encoding='utf-8') as categories_file:
+        for category in all_categories:
+            categories_file.write(category + '\n')
+
+# Call the function with the input sentences
+find_patterns(sentences)
