@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .element {
+            border: 2px solid black;
+            justify-content: center;
+            /* align-items: center; */
+            text-align: center;
+            width: 20vw;
+            font-size: 50px;
+            border-radius: 20px;
+        }
+
+        .icon {
+            cursor: pointer;
+            color: #000;
+            height: 25px;
+        }
+
+
+        /*new style*/
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Tooltip text */
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            font-size: 20px;
+            width: 5vw;
+            background-color: black;
+            color: #fff;
+            margin-top:30px  ;
+            margin-left: 20px;
+            text-align: center;
+            border-radius: 6px;
+
+            /* Position the tooltip text - see examples below! */
+            position: absolute;
+            z-index: 1;
+        }
+
+        /* Show the tooltip text when you mouse over the tooltip container */
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="element">
+        hello World <sup><sup><img src="/Client/images/bigp4.png" class="icon" title="Fuck you"></sup> </sup>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="element">
+
+        <div class="tooltip">Hello World
+            <span class="tooltiptext">Fuck you</span>
+            <sup><sup><img src="/Client/images/bigp4.png" class="icon"></sup> </sup> <br>
+        </div>
+    </div>
+</body>
+
+</html>
