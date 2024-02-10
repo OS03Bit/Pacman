@@ -1,4 +1,3 @@
-
 const brw = chrome;
 let constants;
 initPatternHighlighter();
@@ -24,7 +23,10 @@ async function patternHighlighting(waitForChanges = false) {
     await new Promise(resolve => { setTimeout(resolve, 1536) });
     addPhidForEveryElement(document.body);
     let domCopyB = document.body.cloneNode(true);
+    // websitebody = domCopyA;
     removeBlacklistNodes(domCopyB);
+    // removeBlacklistNodes(websitebody);
+
     resetDetectedPatterns()
     findPatternDeep(domCopyB, domCopyA);
     domCopyA.replaceChildren();
@@ -100,30 +102,183 @@ function resetDetectedPatterns() {
     );
 }
 
-const url = 'https://intellicampus.in/Login'; // Replace this with your API endpoint
-console.log("hiii");
-// Data to be sent in the POST request
- // Replace this with your API endpoint
 
-// Options for the fetch request
-const options = {
-  method: 'GET',
-  headers: {
-    'Content-Type': 'application/json' // Specify content type as JSON (optional for GET requests)
-  }
+const url = 'http://localhost:8000/websitesearch';
+
+function cloneDocumentAndAddFullStop() {
+    var clonedDocument = document.cloneNode(true);
+    clonedDocument.querySelectorAll('script').forEach(function (script) {
+        script.remove();
+    });
+    clonedDocument.querySelectorAll('style').forEach(function (style) {
+        style.remove();
+    });
+    clonedDocument.querySelectorAll('noscript').forEach(function (noscript) {
+        noscript.remove();
+    });
+    clonedDocument.querySelectorAll('audio').forEach(function (audio) {
+        audio.remove();
+    });
+    clonedDocument.querySelectorAll('video').forEach(function (video) {
+        video.remove();
+    });
+    clonedDocument.querySelectorAll('link').forEach(function (link) {
+        link.remove();
+    });
+    clonedDocument.querySelectorAll('meta').forEach(function (link) {
+        link.remove();
+    });
+    clonedDocument.querySelectorAll('head').forEach(function (link) {
+        link.remove();
+    });
+    clonedDocument.querySelectorAll('iframe').forEach(function (link) {
+        link.remove();
+    });
+    return clonedDocument;
+}
+
+function extractTextFromNode(node, textArray) {
+    if (node.nodeType === Node.TEXT_NODE) {
+        if (node.textContent.trim() && !parseFloat(node.textContent.trim())) {
+
+            textArray.push(node.textContent.trim());
+        }
+    } else {
+        for (let childNode of node.childNodes) {
+            extractTextFromNode(childNode, textArray);
+        }
+    }
+}
+
+function extractTextContent(clonedDocument) {
+    var textArray = [];
+    extractTextFromNode(clonedDocument.body, textArray);
+
+    return textArray;
+}
+var clonedDocument = cloneDocumentAndAddFullStop();
+var extractedText = extractTextContent(clonedDocument);
+
+const postData = {
+    websitedomain: 'http://localhost:8000/websitesearch',
+    websitebody: extractedText
+
 };
 
-// Make the GET request using Fetch API
+const options = {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(postData)
+};
+
 fetch(url, options)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Response:', data);
+    })
+    .catch(error => {
+        console.error('There was a problem with your fetch operation:', error);
+    });
+    const cssRules = `
+    .element2012 {
+        border: 2px solid black;
+        justify-content: center;
+        /* align-items: center; */
+        text-align: center;
+        width: 20vw;
+        font-size: 50px;
+        border-radius: 20px;
     }
-    return response.json(); // Parse response body as JSON
-  })
-  .then(data => {
-    console.log('Response:', data); // Handle response data
-  })
-  .catch(error => {
-    console.error('There was a problem with your fetch operation:', error);
-  });
+
+    .icon2012 {
+        cursor: pointer;
+        color: #000;
+        height: 25px;
+    }
+
+
+    /*new style*/
+
+    .tooltip2012 {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Tooltip text */
+    .tooltip2012 .tooltiptext2012 {
+        visibility: hidden;
+        font-size: 20px;
+        width: 5vw;
+        background-color: black;
+        color: #fff;
+        margin-top:30px  ;
+        margin-left: 20px;
+        text-align: center;
+        border-radius: 6px;
+
+        /* Position the tooltip text - see examples below! */
+        position: absolute;
+        z-index: 10000;
+    }
+
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .tooltip2012:hover .tooltiptext2012 {
+        visibility: visible;
+    }
+  `;
+  
+  // Function to inject CSS into the page
+  function injectCSS(css) {
+    const style = document.createElement('style');
+    style.textContent = css;
+    document.head.appendChild(style);
+  }
+  
+  // Inject CSS when the content script is executed
+  injectCSS(cssRules);
+
+function highlightSponsoredWords() {
+    // List of sponsored words (customize as needed)
+    const sponsoredWords = ['WildHorn', 'amicraft', 'Sponsored'];
+  
+    // Helper function to replace matched words with highlighted version
+    function highlightText(node) {
+      if (node.nodeType === Node.TEXT_NODE) {
+        const replacedText = node.nodeValue.replace(
+          new RegExp(`\\b(${sponsoredWords.join("|")})\\b`, "gi"),
+          match => match ? `<div class="tooltip2012">${match}
+          <span class="tooltiptext2012" style="">Fuck you</span>
+          <sup><sup><img src="https://intellicampus.in/images/bigp3.png" class="icon2012" style="width:20px; height: 20px"></sup> </sup> <br>
+      </div>`: match
+        );
+  
+        // Check if the text was actually replaced
+        if (replacedText !== node.nodeValue) {
+          const newNode = document.createElement("span");
+          newNode.innerHTML = replacedText;
+  
+          // Insert the new node before the original text node
+          node.parentNode.insertBefore(newNode, node);
+  
+          // Remove the original text node
+          node.parentNode.removeChild(node);
+        }
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        // Recursively process child nodes
+        for (const childNode of node.childNodes) {
+          highlightText(childNode);
+        }
+      }
+    }
+  
+    // Start processing from the body element
+    highlightText(document.body);
+  }
+  highlightSponsoredWords();
