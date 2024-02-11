@@ -2,7 +2,11 @@
 body {
   margin: 0;
   padding: 0;
-  /* background-image: url("/Server/assets/images/Default_pacman_background_for_poster_in_white_screen_with_the_0.webp"); */
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  
 }
 body::after {
   content: "";
@@ -11,27 +15,23 @@ body::after {
   left: 0;
   width: 100%;
   height: 100%;
-  /* background-image: url("/Server/assets/images/Default_pac_man_and_ghosts_cool_cute_0.jpg"); */
+  
   background-repeat: no-repeat, repeat;
-  /* opacity: 0.5;  */
+  
   background-size: cover;
   z-index: -1;
 }
 
 /*-----NAV BAR------*/
 
-.nav-bar {
-  /* color: #fff; */
-}
+
 .nav-icon {
-  /* border: 1px solid black; */
+
   display: flex;
   align-items: center;
   width: 35vh;
   font-size: 4.5vw;
-  /*top right bottom left*/
   margin: 3vh 0vh 0vh 4vh;
-  /* margin: 10vh; */
   font-family: "Montserrat", sans-serif;
 }
 
@@ -39,9 +39,8 @@ body::after {
     height: 12vh;
 }
 
-/*-----SEARCH BAR------*/
+
 .search {
-    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,7 +53,7 @@ body::after {
     background-color: #d9d9d9;
     width: 32vw;
     height: 50px;
-    /* border-radius: 10px; */
+    
     padding-left: 10px;
     position: absolute;
     border-style: none;
@@ -72,9 +71,9 @@ body::after {
     margin-left: 20vw;
 }
 
-/*--TABLE CONTAINER------   */
+
 .table-content {
-    /* border: 1px solid black; */
+    
     width: 90%;
     margin: 5vh auto;
   font-size: 2.5vh;
@@ -85,6 +84,7 @@ td {
     background-color: #d9d9d9;
     /* border: 0px solid black; */
     border-collapse: collapse;
+    padding: 10px 10px 10px 20px;
 }
 th {
     /* border: 1px solid black; */
@@ -93,9 +93,6 @@ th {
 }
 /*----------Image Conatainer----------*/
 .image-container{
-    /* margin: -20vh 50%; */
-    /* width: 65vw; */
-    /* border: 1px solid black; */
     justify-content: center;
     /*top right bottom left*/
     margin: -60vh 0vw 0vh 30vw ;

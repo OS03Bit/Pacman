@@ -229,10 +229,70 @@ const cssRules = `
   `;
 // Inject CSS when the content script is executed
 injectCSS(cssRules);
+function highlightProducts(dataaa) {
+    // List of sponsored words (customize as needed)
+    // const sponsoredWords = dataaa;
+    // const sponsoredWords = ['No, I will take the risk'];
+    // console.log(sponsoredWords);
+    // sponsoredWords.push('Sponsored')
+    // sponsoredWords.push('left in stock')
+
+    // Helper function to replace matched words with highlighted version
+    // Check if the div element exists
+    if (divElement) {
+        // Add a border to the div element to highlight it
+
+        // Create an image element
+        // // Set the source of the image
+        // // Append the image before the end of the div element
+    }
+}
+
+let divElement = document.getElementById("productTitle");
+if (divElement) {
+    let imgElement = document.createElement("img");
+    let linkElement = document.createElement("a");
+    linkElement.href = "https://pricehistoryapp.com/";
+    linkElement.target = "_blank";
+    linkElement.appendChild(imgElement);
+    imgElement.src = "https://intellicampus.in/images/bigp3.png";
+    imgElement.style.height = "20px";
+    imgElement.style.width = "20px";
+    divElement.appendChild(linkElement);
+    var currentUrl = window.location.href;
+    navigator.clipboard.writeText(currentUrl)
+        .then(function () {
+            console.log('URL copied to clipboard:', currentUrl);
+        })
+        .catch(function (err) {
+            console.error('Unable to copy URL to clipboard', err);
+        });
+
+}
+
+console.log(window.location.href)
+// console.log(navigator.clipboard.writeText)
+if (window.location.href == "https://pricehistoryapp.com/") {
+    // console.log(navigator.clipboard.writeText)
+    // console.log(g.value)
+    navigator.clipboard.readText()
+    .then(pastedText => {
+        // console.log(pastedText)
+        // alert(pastedText)
+        pastedText = pastedText + ' '
+        let g = document.getElementsByTagName('input')[0];
+        g.value = pastedText;
+        // alert(g.value);
+        document.getElementsByTagName('button')[1].click();
+
+        })
+}
+
+highlightProducts("hi")
 function highlightSponsoredWords(dataaa) {
     // List of sponsored words (customize as needed)
     const sponsoredWords = dataaa;
-    // const sponsoredWords = ['Sponsored', 'left in stock'];
+    // const sponsoredWords = ['No, I will take the risk'];
     // console.log(sponsoredWords);
     // sponsoredWords.push('Sponsored')
     // sponsoredWords.push('left in stock')
@@ -244,7 +304,7 @@ function highlightSponsoredWords(dataaa) {
                 new RegExp(`\\b(${sponsoredWords.join("|")})\\b`, "gi"),
                 match => match ? `<div class="tooltip2012">${match}
           <span class="tooltiptext2012" style="width:250px; height: 20px;">Urgency/Scarcity</span>
-          <sup><sup><img src="https://intellicampus.in/images/bigp3.png" class="icon2012" style="width:20px; height: 20px"></sup> </sup> <br>
+          <sup><sup><img src="https://intellicampus.in/images/bigp2.png" class="icon2012" style="width:20px; height: 20px"></sup> </sup> <br>
       </div>`: match
             );
 
@@ -296,36 +356,38 @@ fetch(url, options)
 
 var maindomain;
 function extractDomain(url) {
-  const domainRegex = new RegExp(/^(?:https?:\/\/)?(?:www\.)?([^\/.]+)/);
-  // console.log(url);
-  // console.log(domainRegex);
-  const mat = url.match(domainRegex);
-  return mat ? mat[1] : null;
+    const domainRegex = new RegExp(/^(?:https?:\/\/)?(?:www\.)?([^\/.]+)/);
+    // console.log(url);
+    // console.log(domainRegex);
+    const mat = url.match(domainRegex);
+    return mat ? mat[1] : null;
 }
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
-  if (message.message === "myMessage") {
-    console.log("recieved message");
-  }
-  let c = 0;
-  maindomain = message.message;
-  maindomain = extractDomain(maindomain);
-  // console.log(maindomain);
-  let links = document.getElementsByTagName("a");
-  for (let i = 0; i < links.length; i++) {
-    // console.log(links[i].href);
-    const domain = extractDomain(links[i].href);
-    // console.log(domain);
-    if (domain != maindomain && domain) {
-      console.log(domain);
-      c++;
+    if (message.message === "myMessage") {
+        console.log("recieved message");
     }
-  }
-  console.log(c);
-  if (c >= links.length) {
-    alert("Beware this site contains a lot of redirecting links");
-    console.log("Website is harmful.");
-  }
-  else {
-    console.log("Website is safe");
-  }
+    let c = 0;
+    maindomain = message.message;
+    maindomain = extractDomain(maindomain);
+    // console.log(maindomain);
+    let links = document.getElementsByTagName("a");
+    for (let i = 0; i < links.length; i++) {
+        // console.log(links[i].href);
+        const domain = extractDomain(links[i].href);
+        // console.log(domain);
+        if (domain != maindomain && domain) {
+            console.log(domain);
+            c++;
+        }
+    }
+    console.log(c);
+    if (c >= links.length) {
+        alert("Beware this site contains a lot of redirecting links");
+        console.log("Website is harmful.");
+    }
+    else {
+        console.log("Website is safe");
+    }
 });
+
+

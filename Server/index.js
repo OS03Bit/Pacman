@@ -14,7 +14,11 @@ app.use(cors())
 app.use(express.json())
 app.use(bodyParser.json({ limit: '100mb' }));
 app.use(bodyParser.urlencoded({ extended: true, limit: '100mb' }));
+app.use(express.static("./assets"));
 app.use(morgan('dev'))
+app.set('view engine', 'ejs');
+app.set("views", "./views");
+
 app.use("/", require("./routes"));
 
 const PORT = process.env.PORT || 8000;

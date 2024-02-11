@@ -49,7 +49,15 @@ def find_patterns(sentences):
         "Work hard and no play?": True,
         "Amazon Great India Sale": True,
         "Sale":True,
-        "items.":True,
+        "items":True,
+        "No Cost EMI":True,
+        "Wishlist":True,
+        "Profile":True,
+        "cart":True,
+        "bag":True,
+        "Sign in": True,
+        "Subscribe":True,
+        "In Stock":True,
     }
 
     # Predict dark patterns for each sentence
