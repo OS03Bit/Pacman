@@ -3,9 +3,10 @@ import nltk
 from nltk.tokenize import sent_tokenize
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier
-
+nltk.download('punkt')
 # Load the dataset
-data = pd.read_csv('Pacman/Server/scripts/RF/sentences.csv')
+data = pd.read_csv('D:\Personal\Projects\Web Extension\Pacman_2\Pacman\Server\scripts\sentences.csv')
+print(data)
 # Split the data into features (X) and labels (y)
 X = data['text']
 y_label = data['label']
@@ -24,7 +25,7 @@ def predict_dark_pattern(statement):
     label_prediction = rf_classifier_label.predict(statement_vectorized)[0]
     return label_prediction
 
-input_file_path = 'Pacman/Server/scripts/RF/input_paragraph.txt'  # Update with your file path
+input_file_path = 'D:\Personal\Projects\Web Extension\Pacman_2\Pacman\Server\scripts\input_paragraph.txt'  # Update with your file path
 with open(input_file_path, 'r', encoding='utf-8') as file:
     input_paragraph = file.read()
 
@@ -42,6 +43,6 @@ for sentence in sentences:
     if label_prediction == 0:
         pass
     else: 
-        print(f"Sentence: {sentence.strip()}")
-        print(f"Label Prediction: {label_prediction}")
+        # print(f"Sentence: {sentence.strip()}")
+        # print(f"Label Prediction: {label_prediction}")
         print()

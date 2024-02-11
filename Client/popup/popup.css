@@ -30,7 +30,7 @@ body {
 }
 .dp_list{
     display: flex;
-    align-items: center;
+    align-items: left;
     margin: 10px 0px;
 }
 .dp_Type img{

@@ -173,20 +173,13 @@ const options = {
     body: JSON.stringify(postData)
 };
 
-fetch(url, options)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log('Response:', data);
-    })
-    .catch(error => {
-        console.error('There was a problem with your fetch operation:', error);
-    });
-    const cssRules = `
+var sss;
+function injectCSS(css) {
+    const style = document.createElement('style');
+    style.textContent = css;
+    document.head.appendChild(style);
+}
+const cssRules = `
     .element2012 {
         border: 2px solid black;
         justify-content: center;
@@ -214,11 +207,12 @@ fetch(url, options)
     /* Tooltip text */
     .tooltip2012 .tooltiptext2012 {
         visibility: hidden;
-        font-size: 20px;
-        width: 5vw;
-        background-color: black;
+        font-size: 15px;
+        // width: 5vw;
+        background-color: grey;
+        justify-content: center;
         color: #fff;
-        margin-top:30px  ;
+        margin-top:30px;
         margin-left: 20px;
         text-align: center;
         border-radius: 6px;
@@ -233,52 +227,105 @@ fetch(url, options)
         visibility: visible;
     }
   `;
-  
-  // Function to inject CSS into the page
-  function injectCSS(css) {
-    const style = document.createElement('style');
-    style.textContent = css;
-    document.head.appendChild(style);
-  }
-  
-  // Inject CSS when the content script is executed
-  injectCSS(cssRules);
-
-function highlightSponsoredWords() {
+// Inject CSS when the content script is executed
+injectCSS(cssRules);
+function highlightSponsoredWords(dataaa) {
     // List of sponsored words (customize as needed)
-    const sponsoredWords = ['WildHorn', 'amicraft', 'Sponsored'];
-  
+    const sponsoredWords = dataaa;
+    // const sponsoredWords = ['Sponsored', 'left in stock'];
+    // console.log(sponsoredWords);
+    // sponsoredWords.push('Sponsored')
+    // sponsoredWords.push('left in stock')
+
     // Helper function to replace matched words with highlighted version
     function highlightText(node) {
-      if (node.nodeType === Node.TEXT_NODE) {
-        const replacedText = node.nodeValue.replace(
-          new RegExp(`\\b(${sponsoredWords.join("|")})\\b`, "gi"),
-          match => match ? `<div class="tooltip2012">${match}
-          <span class="tooltiptext2012" style="">Fuck you</span>
+        if (node.nodeType === Node.TEXT_NODE) {
+            const replacedText = node.nodeValue.replace(
+                new RegExp(`\\b(${sponsoredWords.join("|")})\\b`, "gi"),
+                match => match ? `<div class="tooltip2012">${match}
+          <span class="tooltiptext2012" style="width:250px; height: 20px;">Urgency/Scarcity</span>
           <sup><sup><img src="https://intellicampus.in/images/bigp3.png" class="icon2012" style="width:20px; height: 20px"></sup> </sup> <br>
       </div>`: match
-        );
-  
-        // Check if the text was actually replaced
-        if (replacedText !== node.nodeValue) {
-          const newNode = document.createElement("span");
-          newNode.innerHTML = replacedText;
-  
-          // Insert the new node before the original text node
-          node.parentNode.insertBefore(newNode, node);
-  
-          // Remove the original text node
-          node.parentNode.removeChild(node);
+            );
+
+            // Check if the text was actually replaced
+            if (replacedText !== node.nodeValue) {
+                const newNode = document.createElement("span");
+                newNode.innerHTML = replacedText;
+
+                // Insert the new node before the original text node
+                node.parentNode.insertBefore(newNode, node);
+
+                // Remove the original text node
+                node.parentNode.removeChild(node);
+            }
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+            // Recursively process child nodes
+            for (const childNode of node.childNodes) {
+                highlightText(childNode);
+            }
         }
-      } else if (node.nodeType === Node.ELEMENT_NODE) {
-        // Recursively process child nodes
-        for (const childNode of node.childNodes) {
-          highlightText(childNode);
-        }
-      }
     }
-  
+
     // Start processing from the body element
     highlightText(document.body);
+}
+fetch(url, options)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Response:', data);
+        sss = data;
+        console.log("Recadasdadasda")
+        console.log(sss)
+        highlightSponsoredWords(sss);
+    })
+    .catch(error => {
+        console.error('There was a problem with your fetch operation:', error);
+    });
+
+
+// Function to inject CSS into the page
+
+
+
+
+var maindomain;
+function extractDomain(url) {
+  const domainRegex = new RegExp(/^(?:https?:\/\/)?(?:www\.)?([^\/.]+)/);
+  // console.log(url);
+  // console.log(domainRegex);
+  const mat = url.match(domainRegex);
+  return mat ? mat[1] : null;
+}
+chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+  if (message.message === "myMessage") {
+    console.log("recieved message");
   }
-  highlightSponsoredWords();
+  let c = 0;
+  maindomain = message.message;
+  maindomain = extractDomain(maindomain);
+  // console.log(maindomain);
+  let links = document.getElementsByTagName("a");
+  for (let i = 0; i < links.length; i++) {
+    // console.log(links[i].href);
+    const domain = extractDomain(links[i].href);
+    // console.log(domain);
+    if (domain != maindomain && domain) {
+      console.log(domain);
+      c++;
+    }
+  }
+  console.log(c);
+  if (c >= links.length) {
+    alert("Beware this site contains a lot of redirecting links");
+    console.log("Website is harmful.");
+  }
+  else {
+    console.log("Website is safe");
+  }
+});

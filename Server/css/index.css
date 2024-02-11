@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  /* background-image: url("/Server/assets/images/Default_pacman_background_for_poster_in_white_screen_with_the_0.webp"); */
+}
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-image: url("/Server/assets/images/Default_pac_man_and_ghosts_cool_cute_0.jpg"); */
+  background-repeat: no-repeat, repeat;
+  /* opacity: 0.5;  */
+  background-size: cover;
+  z-index: -1;
+}
+
+/*-----NAV BAR------*/
+
+.nav-bar {
+  /* color: #fff; */
+}
+.nav-icon {
+  /* border: 1px solid black; */
+  display: flex;
+  align-items: center;
+  width: 35vh;
+  font-size: 4.5vw;
+  /*top right bottom left*/
+  margin: 3vh 0vh 0vh 4vh;
+  /* margin: 10vh; */
+  font-family: "Montserrat", sans-serif;
+}
+
+.pacman-ico {
+    height: 12vh;
+}
+
+/*-----SEARCH BAR------*/
+.search {
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 15% auto;
+    width: 50%;
+  font-family: "Montserrat", sans-serif;
+}
+.search-bar {
+    background-color: #d9d9d9;
+    width: 32vw;
+    height: 50px;
+    /* border-radius: 10px; */
+    padding-left: 10px;
+    position: absolute;
+    border-style: none;
+}
+.search-bar:active {
+    border-style: none;
+}
+.search-ico {
+  position: relative;
+  margin-left: 28vw;
+  cursor: pointer;
+}
+.search-resize {
+    border: 1px solid pink;
+    margin-left: 20vw;
+}
+
+/*--TABLE CONTAINER------   */
+.table-content {
+    /* border: 1px solid black; */
+    width: 90%;
+    margin: 5vh auto;
+  font-size: 2.5vh;
+}
+table,
+th,
+td {
+    background-color: #d9d9d9;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th {
+    /* border: 1px solid black; */
+    text-align: left;
+    padding-left: 20px;
+}
+/*----------Image Conatainer----------*/
+.image-container{
+    /* margin: -20vh 50%; */
+    /* width: 65vw; */
+    /* border: 1px solid black; */
+    justify-content: center;
+    /*top right bottom left*/
+    margin: -60vh 0vw 0vh 30vw ;
+    overflow-x: hidden;
+}
+#ghost-ico{
+    /* opacity: 0.4; */
+    width: 100vw;
+    
+}
+/*---------------Main Div----------------*/
+.main-div{
+    display: flex;
+    position: relative;
+}
+.imageDiv{
+    position: absolute;
+    left : 25%
+}
