@@ -27,7 +27,7 @@
         "storage"
     ],
     "action": {
-        "default_popup": "popup/popup.html", 
+        "default_popup": "popup/popup1.html", 
         "default_icon" : {
             "48": "/images/yellowicon.png"
         }

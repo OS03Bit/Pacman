@@ -1,106 +1,144 @@
-body {
-  color: #fff;
-  margin: 0;
-  font-family: "Montserrat", sans-serif;
-  background-color: black;
-  border-radius: 20px;
+body{
+    margin: 0;
+    padding: 1px;
+    background-color: white;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    width: 350px;
 
 }
-.title{
-    padding: 10px;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
+/* New CSS */
+.blackdiv{
+    background-color: #06030D;
+    border-radius: 15px;
+    width: 350px;
+    margin: 1px 0;
+}
+.headerdiv{
+    height: 50px;
+    /* width: 300px; */
     margin: auto;
+    display: flex;
     align-items: center;
+    text-align: center;
     justify-content: center;
+    color: #FA1E4E !important;
+    font-size: 28px;
+    vertical-align: middle;
 }
-.title img{
+.headerdiv img{
+    /* margin: auto; */
     width: 30px;
-    margin-right: 10px;
     height: 30px;
+    margin-right: 15px;
 }
-.dp_Type{
-    padding: 5px 0px 10px 0px;
-    font-size: medium;
+.subdiv2{
+    width: auto;
+    font-size: 20px;
+    padding: 2px 2px;
+    /* margin: 2px; */
+}
+.domaindiv{
+    margin: 10px 10px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin: auto;    
+
 }
-.dp_list{
-    display: flex;
-    align-items: left;
-    margin: 10px 0px;
-}
-.dp_Type img{
+.domaindiv img{
     width: 20px;
     height: 20px;
     margin-right: 10px;
-    margin-left: -10px;
+    
 }
-.footer{
-    font-size:small;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin: 5px 10px 20px 10px;
-}
-.top-row{
+.checkemmorcediv{
+    margin: 10px 10px;
     display: flex;
     align-items: center;
 }
-.box{
-    width: 10px;
-    height: 10px;
-    border: 2px solid #A259FF;
+.checkemmorcediv img{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
 }
-
-.float-container{
-    padding: 2px;
-}
-
 .circle{
-    width: 10px;
-    margin: 0 5px;
-    height: 10px;
-    background-color: #fff;
+    width: 17.5px;
+    height: 17.5px;
     border-radius: 50%;
+    background-color: green;
 }
 
-.circle1{
-    margin: 5px 0px;
-    width: 10px;
-    height: 10px;
-    background-color: #fff;
-    border-radius: 50%;
-}
-
-.left-row{
+.checkbox-wrapper{
     display: flex;
-    float: left;
-    /* border: 2px solid pink; */
-    flex-direction: column;
-    align-items: left;
-    padding-top:5px;
-    width: 5vw;
-    height: 90vh;
-    align-items: center;
-    justify-content: center;
+    margin: auto;
+    margin-right: 10px;
 }
 
-.right-row{
-    align-items: center;
-    /* border: 2px solid pink; */
-    padding-top:5px;
-    display: flex;
-    flex-direction: column;
-    float: right;
-    width: 5vw;
-    height: 90vh;
-    margin-right: 3px;
-    justify-content: center;
+.checkbox-wrapper input[type=checkbox] {
+    display: none;
+}
 
+.checkbox-wrapper label {
+    --size: 30px;
+
+    cursor: pointer;
+    width: var(--size);
+    height: calc(var(--size) / 2);
+    background: #22262C;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+    /* outline: 1px solid white; */
+}
+
+.checkbox-wrapper label:after {
+    content: '';
+    position: absolute;
+    top: 6%;
+    left: 2.5%;
+    width: calc(50% - 5%);
+    height: calc(100% - 11%);
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+.checkbox-wrapper input:checked+label {
+    background: rgb(255, 255, 77);
+}
+
+.checkbox-wrapper input:checked+label:after {
+    left: calc(100% - 2.5%);
+    transform: translateX(-100%);
+}
+
+.checkbox-wrapper label:active:after {
+    width: 55%;
+    /* outline: 2px solid lime; */
+}
+
+.subdiv3{
+    margin: 1px;
+    padding: 10px;
+    width: 329px;
+}
+.categorydiv{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    font-size: 20px;
+    margin: 10px 0;
+}
+.categorydiv img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+.subdiv4{
+    padding: 10px;
+    width: 329px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
 }

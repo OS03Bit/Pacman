@@ -1,39 +1,560 @@
-Gmail.
-Images.
-Something went wrongYour history wasn't deleted.
-×.
-Choose what you’re giving feedback on.
-See more.
-Delete.
-Delete.
-Report inappropriate predictions.
-Dismiss.
-Google offered in:.
-हिन्दी.
-বাংলা.
-తెలుగు.
-मराठी.
-தமிழ்.
-ગુજરાતી.
-ಕನ್ನಡ.
-മലയാളം.
-ਪੰਜਾਬੀ.
-India.
-About.
-Advertising.
-Business.
-How Search works.
+Explore.
+Plus.
+Login.
+LOGIN.
+New customer?.
+Sign Up.
+Become a Seller.
+More.
+Cart.
+Electronics.
+TVs & Appliances.
+Men.
+Women.
+Baby & Kids.
+Home & Furniture.
+Sports, Books & More.
+Flights.
+Offer Zone.
+Filters.
+CATEGORIES.
+Audio & Video.
+Video Accessories.
+Speakers.
+Audio Players & Recorders.
+Audio Accessories.
+Headset.
+Show 2 more.
+Price.
+..
+..
+..
+..
+..
+..
+Min.
+₹500.
+₹1500.
+₹2500.
+₹5000.
+to.
+₹500.
+₹1500.
+₹2500.
+₹5000.
+₹5000+.
+?.
+Brand.
+Customer Ratings.
+Discount.
+GST Invoice Available.
+Availability.
+Offers.
+Buy More, Save More.
+No Cost EMI.
+Special Price.
+Home.
+Audio & Video.
+The all new.
+Samsung Galaxy Buds Pro.
+earphones will be launching on Jan 28th. Grab the best deal with Flipkart offers..
+Also Check:.
+sony headphones with mic.
+,.
+JBL xtreme 2.
+,.
+Sony Woofer.
+,.
+Lg Xboom.
+Audio & Video.
+(Showing 1 – 40 products of 33,541 products).
+Sort By.
+Popularity.
+Price -- Low to High.
+Price -- High to Low.
+Newest First.
+Discount.
+Sponsored.
+Misuhrobir Earbuds Bluetooth Headset.
+Black, In the Ear.
+(200).
+₹699.
+₹.
+Add to Compare.
+Sponsored.
+Boult Y1 with Zen ENC Mic, 50H Battery, Fast Charging, ....
+Black, True Wireless.
+(3,25,152).
+₹1,199.
+₹.
+Add to Compare.
+Bestseller.
+OnePlus Bullets Wireless Z2 with Fast Charge, 30 Hrs Ba....
+Magico Black, In the Ear.
+(9,53,980).
+₹1,799.
+₹.
+Add to Compare.
+OPPO Enco Buds 2 with 28 hours Battery life & Deep Nois....
+Midnight, True Wireless.
+(2,77,781).
+₹1,799.
+₹.
+Add to Compare.
+boAt Rockerz 255 Pro+ /258 Pro+ with ASAP Charge and up....
+Navy Blue, In the Ear.
+(9,52,795).
+₹1,099.
+₹.
+Add to Compare.
+realme Techlife Buds T100 with up to 28 Hours Playback ....
+Black, True Wireless.
+(1,90,143).
+₹1,499.
+₹.
+Add to Compare.
+boAt Immortal 131 with Beast Mode, 40 Hours Playback an....
+Black sabre, True Wireless.
+(79,615).
+₹1,099.
+₹.
+Add to Compare.
+Sponsored.
+boAt Airdopes Alpha with 35 HRS Playback, 13mm Drivers,....
+Jet Black, In the Ear.
+(1,60,586).
+₹799.
+₹.
+Add to Compare.
+Apple AirPods Pro (2nd generation) with MagSafe Case (U....
+White, True Wireless.
+(3,072).
+₹23,990.
+₹.
+Add to Compare.
+OnePlus E305A Bluetooth Headset.
+Acoustic Red, In the Ear.
+(9,53,980).
+₹1,799.
+₹.
+Add to Compare.
+Sponsored.
+boAt Airdopes Alpha with 35 HRS Playback, 13mm Drivers,....
+Dark Cyan, In the Ear.
+(1,60,586).
+₹999.
+₹.
+Add to Compare.
+Sponsored.
+Unix Antilla 72 Hours Playing Time Fast Charging Blueto....
+Blue, In the Ear.
+(4,175).
+₹322.
+₹.
+Add to Compare.
+OnePlus Nord Buds 2r True Wireless in Ear Earbuds with ....
+Deep Grey, True Wireless.
+(48,102).
+₹2,199.
+₹.
+Add to Compare.
+realme Buds T300 with 12.4mm Driver, 30dB ANC, 360 Spat....
+Stylish Black, True Wireless.
+(24,071).
+₹2,299.
+₹.
+Add to Compare.
+realme Buds 2 Wired Headset.
+Black, In the Ear.
+(7,44,321).
+₹599.
+₹.
+Add to Compare.
+realme Buds Wireless 3 with 30dB ANC, 360 degree Spatia....
+Pure Black, In the Ear.
+(53,033).
+₹1,799.
+₹.
+Add to Compare.
+Sponsored.
+boAt Rockerz 255 Arc with ENx Technology and upto 30 Ho....
+Cosmos Black, In the Ear.
+(27,500).
+₹1,099.
+₹.
+Add to Compare.
+Sponsored.
+Boult Z40 with Zen ENC Mic, 60H Battery Life, Low Laten....
+Blue, In the Ear.
+(1,65,882).
+₹1,199.
+₹.
+Add to Compare.
+OnePlus Bullets Wireless Z2 ANC Bluetooth in Ear Earpho....
+Boomin Black, In the Ear.
+(31,163).
+₹2,299.
+₹.
+Add to Compare.
+boAt Airdopes 161 with 40 Hours Playback, ASAP Charge &....
+Pebble Black, True Wireless.
+(7,84,314).
+₹1,099.
+₹.
+Add to Compare.
+Sponsored.
+Aroma NB140 Evolve 24 Hours* Playtime | Deep Bass | Mad....
+White, True Wireless.
+(24,840).
+₹499.
+₹.
+Add to Compare.
+Sponsored.
+Boult Z60 with 60Hr Battery, Quad Mic ENC, 50ms Ultra L....
+Powder Blue, True Wireless.
+₹1,299.
+₹.
+Add to Compare.
+Noise Buds VS102 with 50 Hrs Playtime, 11mm Driver, IPX....
+Celeste Blue, In the Ear.
+(5,15,593).
+₹1,099.
+₹.
+Add to Compare.
+realme Buds Wireless 2 Neo with Type-C Fast Charge & Ba....
+Blue, In the Ear.
+(3,73,311).
+₹1,299.
+₹.
+Add to Compare.
+Noise Buds VS102 with 50 Hrs Playtime, 11mm Driver, IPX....
+Jet Black, In the Ear.
+(5,15,593).
+₹1,099.
+₹.
+Add to Compare.
+boAt Aavante Bar 2050 with Wireless Subwoofer 160 W Blu....
+Premium Black, 2.1 Channel.
+(10,728).
+₹7,499.
+₹.
+Add to Compare.
+Sponsored.
+Boult Z60 with 60Hr Battery, Quad Mic ENC, 50ms Ultra L....
+Spring Green, True Wireless.
+₹1,299.
+₹.
+Add to Compare.
+Sponsored.
+beatXP Tune XPods with 50H Playtime, Quad Mic ENC, BT 5....
+Space Blue, True Wireless.
+(438).
+₹899.
+₹.
+Add to Compare.
+truke BTG1 Earbuds with Game Mode, 48H Playtime, Quad M....
+Black, True Wireless.
+(62,600).
+₹799.
+₹.
+Add to Compare.
+realme Buds Wireless 2 Neo with Type-C Fast Charge & Ba....
+Black, In the Ear.
+(3,73,311).
+₹1,299.
+₹.
+Add to Compare.
+Sponsored.
+Boult Astra with Quad Mic ENC, 48Hrs Battery, Low Laten....
+Smoky Metal, True Wireless.
+(26,496).
+₹1,299.
+₹.
+Add to Compare.
+Sponsored.
+Boult W20 with Zen ENC Mic, 32H Battery Life, Low Laten....
+Space Black, True Wireless.
+(26,471).
+₹1,099.
+₹.
+Add to Compare.
+OnePlus Nord Buds 2 True Wireless Earbuds with 25dB Act....
+Thunder Gray, True Wireless.
+(50,738).
+₹2,999.
+₹.
+Add to Compare.
+OnePlus Bullets Wireless Z2 Bluetooth Headset.
+Beam Blue, In the Ear.
+(9,53,980).
+₹1,799.
+₹.
+Add to Compare.
+OnePlus Bullets Wireless Z2 ANC Bluetooth in Ear Earpho....
+Grand Green, In the Ear.
+(31,163).
+₹2,149.
+₹.
+Add to Compare.
+Noise Buds VS404 with 50 Hours Playtime, ENC with Quad ....
+Jet Black, True Wireless.
+(46,736).
+₹999.
+₹.
+Add to Compare.
+Sponsored.
+Aroma NB140 Harmony 40 Hours* Playtime|Deep Bass|Fast C....
+Black, True Wireless.
+(2,141).
+₹599.
+₹.
+Add to Compare.
+Sponsored.
+Aroma NB140 Captain 24 Hours* Playtime | Deep Bass | Ma....
+Black, True Wireless.
+(18,666).
+₹499.
+₹.
+Add to Compare.
+OnePlus Bullets Wireless Z2 Bluetooth Headset.
+Jazz Green, In the Ear.
+(9,53,980).
+₹1,799.
+₹.
+Add to Compare.
+realme Techlife Buds T100 with up to 28 Hours Playback ....
+Blue, True Wireless.
+(1,90,143).
+₹1,499.
+₹.
+Add to Compare.
+Page 1 of 839.
+Next.
+Did you find what you were looking for?.
+Yes.
+No.
+Reviews for Popular Audio & Video.
+&.
+₹1,099.
+With Mic:Yes.
+Bluetooth version: 5.2.
+Wireless range: 10 m.
+Most Helpful Review.
+Best in the market!.
+Nice product 👍 thanks for Flipkart.
+Read full review.
+Flipkart Customer.
+Certified Buyer.
+Recent Review.
+Bad quality.
+This build in poor quality and sound is slow.
+Read full review.
+Mithun Kumar.
+Certified Buyer.
+&.
+₹23,990.
+With Mic:Yes.
+Connector type: No.
+Apple-designed H2 chip, the force behind AirPods Pro, pushes advanced audio performance even further. From smarter noise cancellation to superior three-dimensional sound and battery life, it improves on the best features of AirPods Pro in a big way..
+Most Helpful Review.
+Highly recommended.
+Value for money best feture my first aipods spatial mode and noise cancellation excellent service quality excellent experience 🍎👌❤️.
+Read full review.
+Nadim Shaikh.
+Certified Buyer.
+Recent Review.
+Pretty good.
+Nice working good quality.
+Read full review.
+Srinidhi h j.
+Certified Buyer.
+&.
+₹322.
+With Mic:Yes.
+Bluetooth version: 5.1.
+Wireless range: 10 m.
+Most Helpful Review.
+Waste of money!.
+This product was a waste of money this battery very low 😑 😒  I couldn't accept this product from filpkart team 😔👤 really am very disappointed 😞.
+Read full review.
+Dheeraj Saini.
+Certified Buyer.
+Recent Review.
+Must buy!.
+Very good 👍👍👍👍👍😊😊😊😊😊😊.
+Read full review.
+raju sikary.
+Certified Buyer.
+&.
+₹599.
+With Mic:Yes.
+Most Helpful Review.
+Waste of money!.
+This is a very bad ear buds I wanna speak to everyone plzz no one can buy aroma NB 140.
+This earbuds has not sound quality, bass and it's battery backup is s....
+Read full review.
+Flipkart Customer.
+Certified Buyer.
+Recent Review.
+Moderate.
+Not comfortable while playing songs..
+Battery capacity for Speakers are so poor , telling low battery in 5 hours before..
+Read full review.
+Ram Kumar.
+Certified Buyer.
+&.
+₹1,099.
+With Mic:Yes.
+Bluetooth version: 5.1.
+Charge for 10 minutes, enjoy 180 minutes - ASAP Charge.
+Most Helpful Review.
+Waste of money!.
+right ear bud stopped working after 1 month of use. Many user faced the same issue..
+Read full review.
+Akhtar Hussain.
+Certified Buyer.
+Oct, 2022.
+Recent Review.
+Terrific purchase.
+very nice preduct 🥰🥰🥰🥰🥰.
+THANK YOU FLIPKART ❤️❤️.
+Read full review.
+Flipkart Customer.
+Certified Buyer.
+Audio & Video Price List.
+Audio & Video.
+Price.
+Boult Z40 with Zen ENC Mic, 60H Battery Life, Low Latency Gaming, Made In India, 5.3 Bluetooth Headset.
+Rs. 1199.
+boAt Aavante Bar 2050 with Wireless Subwoofer 160 W Bluetooth Soundbar.
+Rs. 7499.
+OnePlus Bullets Wireless Z2 ANC Bluetooth in Ear Earphones with 45dB Hybrid ANC Bluetooth Headset.
+Rs. 2299.
+Boult Z60 with 60Hr Battery, Quad Mic ENC, 50ms Ultra Low Latency, Made In India, 5.3 Bluetooth Headset.
+Rs. 1299.
+Noise Buds VS404 with 50 Hours Playtime, ENC with Quad Mic, 3 EQ modes Bluetooth Headset.
+Rs. 999.
+beatXP Tune XPods with 50H Playtime, Quad Mic ENC, BT 5.3 Wireless Earbuds Bluetooth Headset.
+Rs. 899.
+Boult Z60 with 60Hr Battery, Quad Mic ENC, 50ms Ultra Low Latency, Made In India, 5.3 Bluetooth Headset.
+Rs. 1299.
+Boult Astra with Quad Mic ENC, 48Hrs Battery, Low Latency Gaming, Made in India, 5.3v Bluetooth Headset.
+Rs. 1299.
+OnePlus E305A Bluetooth Headset.
+Rs. 1799.
+boAt Rockerz 255 Pro+ /258 Pro+ with ASAP Charge and upto 60 Hours Playback Bluetooth Headset.
+Rs. 1099.
+This data was last updated on 2024/02/16.
+SONY Audio & Video.
+,.
+Creative Audio & Video.
+,.
+SAMSUNG Audio & Video.
+,.
+Panasonic Audio & Video.
+,.
+Ambrane Audio & Video.
+,.
+boAt Audio & Video.
+,.
+Saregama Audio & Video.
+,.
+THRUSTMASTER Audio & Video.
+,.
+Skullcandy Audio & Video.
+,.
+Boult Audio Audio & Video.
+,.
+DEFY Audio & Video.
+,.
+Polk Audio Audio & Video.
+,.
+MIFKRT Audio & Video.
+,.
+Home Theaters.
+,.
+Apple Audio & Video.
+,.
+LG Audio & Video.
+,.
+Headset.
+,.
+Matlek Audio & Video.
+,.
+ZEBRONICS Audio & Video.
+,.
+Quantum Audio & Video.
+Check out the new Launches:.
+truke bluetooth headset.
+,.
+truke headset price.
+,.
+truke yb-11s dual battery.
+,.
+truke B121 bluetooth headset.
+Also check:.
+truke B121.
+,.
+truke b088 truly bluetooth headset.
+,.
+truke b088 headset price.
+,.
+Sony Extra Bass Earphones.
+,.
+Philips Bluetooth Headphones.
+Boat Brand:.
+boat rockerz 265v2 bluetooth.
+,.
+boat rockerz bluetooth headset.
+,.
+boat rockerz 265v2 price.
+ABOUT.
+Contact Us.
+About Us.
+Careers.
+Flipkart Stories.
+Press.
+Corporate Information.
+GROUP COMPANIES.
+Myntra.
+Flipkart Wholesale.
+Cleartrip.
+Shopsy.
+HELP.
+Payments.
+Shipping.
+Cancellation & Returns.
+FAQ.
+Report Infringement.
+CONSUMER POLICY.
+Cancellation & Returns.
+Terms Of Use.
+Security.
 Privacy.
-Terms.
-Settings.
-Search settings.
-Advanced search.
-Your data in Search.
-Search history.
-Search help.
-Send feedback.
-Dark theme: On.
-Google apps.
-Google Account.
-Om Sinkar.
-os03bitcode@gmailcom.
+Sitemap.
+Grievance Redressal.
+EPR Compliance.
+Mail Us:.
+Flipkart Internet Private Limited,.
+Buildings Alyssa, Begonia &.
+Clove Embassy Tech Village,.
+Outer Ring Road, Devarabeesanahalli Village,.
+Bengaluru, 560103,.
+Karnataka, India.
+Social.
+Registered Office Address:.
+Flipkart Internet Private Limited,.
+Buildings Alyssa, Begonia &.
+Clove Embassy Tech Village,.
+Outer Ring Road, Devarabeesanahalli Village,.
+Bengaluru, 560103,.
+Karnataka, India.
+CIN : U51109KA2012PTC066107.
+Telephone:.
+Become a Seller.
+Advertise.
+Gift Cards.
+Help Center.
+© 2007-.
+Flipkart.com.
+Back to top.

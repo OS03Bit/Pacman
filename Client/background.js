@@ -67,35 +67,47 @@ chrome.tabs.onUpdated.addListener(async function (tabId, changeInfo, tab) {
     } catch (error) {
         console.error("Error:", error);
     }
-});
-// chrome.runtime.onMessage.addListener(async (mess, sender, sendRes) => {
-//     if (mess.togglestatus == 1) {
-//         updatetoggle(currtabid, 1);
-//     }
-//     else {
-//         updatetoggle(currtabid, 0);
-//     }
-//     if (mess.checkwebsite == 1) {
-//         console.log("IS eCommerce");
-//         // chrome.action.setIcon({path: 'default.png', tabId: currtabid});
-//     }
-//     else {
-//         console.log("IS not eCommerce");
-//         // chrome.action.setIcon({path: 'icongrey.png', tabId: currtabid});
-//     }
-// })
+}); 
+
+chrome.runtime.onMessage.addListener(async (mess, sender, sendRes) => {
+    if (mess.togglestatus == 1) {
+        updatetoggle(currtabid, 1);
+    }
+    else {
+        updatetoggle(currtabid, 0);
+    }
+    if (mess.checkwebsite == 1) {
+        console.log("IS eCommerce");
+        chrome.action.setBadgeText({ text: " " });
+        chrome.action.setBadgeBackgroundColor({ color: "green" });
+        // chrome.action.setIcon({path: 'default.png', tabId: currtabid});
+    }
+    else {
+        console.log("IS not eCommerce");
+        chrome.action.setBadgeText({ text: "" });
+        chrome.action.setBadgeBackgroundColor({ color: [0, 0, 0, 0] });
+        // chrome.action.setIcon({path: 'icongrey.png', tabId: currtabid});
+    }
+    if(mess.domain == 1){
+        let tabs = await chrome.tabs.query({ active: true, currentWindow: true });
+        tabs = tabs[0].url;
+        sendRes({domain: tabs})
+    }
+})
 // chrome.runtime.onMessage.addListener((req, sender, sendRes)=>{
 //     console.log(req);
 //     console.log(sender);
 //     console.log(sendRes);
 //     if(req.checkwebsite == 0){
-//         chrome.tabs.query({active:true, windowType:"normal", currentWindow: true},function(d){
-//             var tabId = d[0].id;
-            
-            
-//         })
+//         sendRes({checkwebsite: "R"})
+//         chrome.action.setBadgeText({ text: "R" });
+//         chrome.action.setBadgeBackgroundColor({ color: "red" });
 //     }
-//     sendRes({checkwebsite: 1})
+//     else{
+//         sendRes({checkwebsite: "G"})
+//         chrome.action.setBadgeText({ text: "G" });
+//         chrome.action.setBadgeBackgroundColor({ color: "#00FF00" });
+//     }
 // })
 // chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
 //     var activeTab = tabs[0];

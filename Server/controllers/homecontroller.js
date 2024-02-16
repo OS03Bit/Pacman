@@ -18,13 +18,19 @@ module.exports.domainlist = async (req, res) => {
     dlist
   })
 }
+module.exports.alldomainlist = async (req, res) => {
+  let dlist = await Domainlist.find();
+  return res.render('nextPage', {
+    dlist
+  })
+}
 
 module.exports.websitesearch = async (req, res) => {
   try {
     let x = req.body.websitebody;
     let y = [];
     for (let i = 0; i < x.length; i++) {
-      let z = x[i].replace(/₹[\d,.]+/g, '').replace(/\.\s/g, '').replace('₹', '').replace('.', '');
+      let z = x[i];
       if (z) {
         y.push(z + '.');
       }

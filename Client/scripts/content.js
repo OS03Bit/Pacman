@@ -1,6 +1,80 @@
 const brw = chrome;
 let constants;
-initPatternHighlighter();
+var maindomain;
+function extractDomain(url) {
+    // const domainRegex = new RegExp(/^(?:https?:\/\/)?(?:www\.)?([^\/.]+)/);
+    const domainRegex = new RegExp(/(?:\d{1,2}\s*:\s*){1,3}\d{1,2}|(?:\d{1,2}\s*(?:days?|hours?|minutes?|seconds?|tage?|stunden?|minuten?|sekunden?|[a-zA-Z]{1,3}\.?)(?:\s*und)?\s*){2,4}/gi);
+    // console.log(url);
+    // console.log(domainRegex);
+    const mat = url.match(domainRegex);
+    return mat ? mat[1] : null;
+}
+
+async function getdomain() {
+    var currentURL = window.location.href;
+
+    // Extract the domain from the URL
+    var domain = extractDomain(currentURL);
+
+    console.log("Current tab's domain: " + domain);
+    alert("Current tab's domain: " + domain);
+
+    // Function to extract domain from URL
+    function extractDomain(url) {
+        var domain;
+        // Find & remove protocol (http, https, ftp) and get domain
+        if (url.indexOf("://") > -1) {
+            domain = url.split('/')[2];
+        } else {
+            domain = url.split('/')[0];
+        }
+
+        // Find & remove port number
+        domain = domain.split(':')[0];
+
+        return domain;
+    }
+    return domain
+}
+// getdomain();
+
+let x = document.head;
+
+
+var cwflag = 0;
+const metaTags = x.querySelectorAll('meta');
+const ecommerceKeywords = ['shop', 'buy', 'store', 'purchase', 'order', 'checkout',
+    'product', 'online', 'sale', 'retail', 'marketplace',
+    'e-shop', 'e-store', 'catalog', 'cart', 'deal', 'discount',
+    'shipping', 'delivery', 'add to cart', 'browse', 'inventory',
+    'shopping', 'check out', 'shop now', 'get it now', 'limited stock', 'stock'];
+metaTags.forEach(metaTag => {
+    let nameAttribute = metaTag.getAttribute('name');
+    let contentAttribute = metaTag.getAttribute('content');
+    if (nameAttribute) {
+
+        nameAttribute = nameAttribute.toLowerCase();
+        if (contentAttribute) {
+
+            contentAttribute = contentAttribute.toLowerCase();
+            const isECommerce = ecommerceKeywords.some(keyword => contentAttribute.includes(keyword));
+            if (isECommerce) {
+                console.log(contentAttribute);
+                cwflag = 1;
+            }
+            if (contentAttribute == 'guce.yahoo.com') {
+                cwflag = 0;
+            }
+        }
+    }
+    if (nameAttribute == null && contentAttribute == 'on') {
+        cwflag = 1;
+    }
+    console.log(`Meta Tag Name: ${nameAttribute}, Content: ${contentAttribute}`);
+});
+
+
+// initPatternHighlighter();
 async function initPatternHighlighter() {
     constants = await import(await brw.runtime.getURL("scripts/constants.js"));
     await patternHighlighting();
@@ -161,7 +235,8 @@ var extractedText = extractTextContent(clonedDocument);
 
 const postData = {
     websitedomain: 'http://localhost:8000/websitesearch',
-    websitebody: extractedText
+    websitebody: extractedText,
+    
 
 };
 
@@ -209,9 +284,9 @@ const cssRules = `
         visibility: hidden;
         font-size: 15px;
         // width: 5vw;
-        background-color: grey;
+        background-color: lightgrey;
         justify-content: center;
-        color: #fff;
+        color: #ffffff;
         margin-top:30px;
         margin-left: 20px;
         text-align: center;
@@ -276,15 +351,13 @@ if (window.location.href == "https://pricehistoryapp.com/") {
     // console.log(navigator.clipboard.writeText)
     // console.log(g.value)
     navigator.clipboard.readText()
-    .then(pastedText => {
-        // console.log(pastedText)
-        // alert(pastedText)
-        pastedText = pastedText + ' '
-        let g = document.getElementsByTagName('input')[0];
-        g.value = pastedText;
-        // alert(g.value);
-        document.getElementsByTagName('button')[1].click();
+        .then(pastedText => {
+            // console.log(pastedText)
+            // alert(pastedText)
 
+            pastedText = pastedText + ' '
+            let g = document.getElementsByTagName('input')[0];
+            g.value = pastedText;
         })
 }
 
@@ -292,7 +365,7 @@ highlightProducts("hi")
 function highlightSponsoredWords(dataaa) {
     // List of sponsored words (customize as needed)
     const sponsoredWords = dataaa;
-    // const sponsoredWords = ['No, I will take the risk'];
+    // const sponsoredWords = ['Contribution to BookASmile', 'Rs. 2'];
     // console.log(sponsoredWords);
     // sponsoredWords.push('Sponsored')
     // sponsoredWords.push('left in stock')
@@ -303,7 +376,7 @@ function highlightSponsoredWords(dataaa) {
             const replacedText = node.nodeValue.replace(
                 new RegExp(`\\b(${sponsoredWords.join("|")})\\b`, "gi"),
                 match => match ? `<div class="tooltip2012">${match}
-          <span class="tooltiptext2012" style="width:250px; height: 20px;">Urgency/Scarcity</span>
+          <span class="tooltiptext2012" style="width:100px; height: 20px;">Urgency</span>
           <sup><sup><img src="https://intellicampus.in/images/bigp2.png" class="icon2012" style="width:20px; height: 20px"></sup> </sup> <br>
       </div>`: match
             );
@@ -330,23 +403,27 @@ function highlightSponsoredWords(dataaa) {
     // Start processing from the body element
     highlightText(document.body);
 }
-fetch(url, options)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log('Response:', data);
-        sss = data;
-        console.log("Recadasdadasda")
-        console.log(sss)
-        highlightSponsoredWords(sss);
-    })
-    .catch(error => {
-        console.error('There was a problem with your fetch operation:', error);
-    });
+function highlightcontent() {
+    fetch(url, options)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Response:', data);
+            sss = data;
+            console.log("Recadasdadasda")
+            console.log(sss)
+
+            highlightSponsoredWords(sss);
+        })
+        .catch(error => {
+            console.error('There was a problem with your fetch operation:', error);
+        });
+
+}
 
 
 // Function to inject CSS into the page
@@ -391,3 +468,17 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
 });
 
 
+if (!cwflag) {
+    console.log("hhjv")
+    chrome.runtime.sendMessage({ checkwebsite: 0 }, function (res) {
+        console.log(res)
+    })
+}
+else {
+    chrome.runtime.sendMessage({ checkwebsite: 1 }, function (res) {
+        console.log(res)
+    })
+    initPatternHighlighter();
+    highlightcontent();
+
+}
