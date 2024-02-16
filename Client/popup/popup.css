@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 1px;
-    background-color: white;
+    background-color: rgb(56, 56, 56);
     color: white;
     font-family: "Montserrat", sans-serif;
     width: 350px;
@@ -142,3 +142,10 @@ body{
     text-align: center;
     flex-direction: column;
 }
+/* For unvisited links */
+
+  /* For visited links */
+  a:visited {
+    color: yellow; /* or any color you prefer */
+  }
+  
