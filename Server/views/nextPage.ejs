@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/css/nextpage.css">
 
-<div class="main-container">
+<div class="main-container-pc">
     <div class="nav-bar">
         <div class="nav-icon">
             <img src="/images/yellowicon.png" alt="Pacman Icon" class="pacman-ico">Pacman
@@ -9,6 +9,39 @@
                 <img src="/images/search 1.svg" alt="" class="search-ico">
             </div>
         </div>
+    </div>
+    <div class="table-container">
+        <table class="table-content">
+            <tr>
+                <th>Domain</th>
+                <th>Category of Dark pattern</th>
+                <th>Last Accessed On</th>
+            </tr>
+            <%for(let i=0; i<dlist.length; i++){%>
+                <tr>
+                    <td>
+                        <%=dlist[i].domain%>
+                    </td>
+                    <td>
+                        <%=dlist[i].category%>
+                    </td>
+                    <td>
+                        <%=dlist[i].lastvisited%>
+                    </td>
+                </tr>
+                <%}%>
+        </table>
+    </div>
+</div>
+<div class="main-container-mobile">
+    <div class="nav-bar">
+        <div class="nav-icon">
+            <img src="/images/yellowicon.png" alt="Pacman Icon" class="pacman-ico">Pacman
+        </div>
+    </div>
+    <div class="search  search-resize">
+        <input type="text" placeholder="Search" class="search-bar">
+        <img src="/images/search 1.svg" alt="" class="search-ico">
     </div>
     <div class="table-container">
         <table class="table-content">

@@ -6,7 +6,6 @@ body {
   height: 100vh;
   overflow-y: hidden;
   overflow-x: hidden; */
-  
 }
 /* body::after {
   content: "";
@@ -28,10 +27,9 @@ body {
   padding: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url('../images/Responsible Design Part 3 of 14 Confirm Shaming or Guilt Shaming - Think Design890 × 815.png');
+  background-image: url("../images/Responsible Design Part 3 of 14 Confirm Shaming or Guilt Shaming - Think Design890 × 815.png");
   overflow-y: hidden;
   overflow-x: hidden;
-  
 }
 body::after {
   content: "";
@@ -40,18 +38,16 @@ body::after {
   left: 0;
   width: 100%;
   height: 100%;
-  
+
   background-repeat: no-repeat, repeat;
-  
+
   background-size: cover;
   z-index: -1;
 }
 
 /*-----NAV BAR------*/
 
-
 .nav-icon {
-
   display: flex;
   align-items: center;
   width: 35vh;
@@ -61,30 +57,29 @@ body::after {
 }
 
 .pacman-ico {
-    height: 12vh;
+  height: 12vh;
 }
 
-
 .search {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    margin: 15% auto;
-    width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 15% auto;
+  width: 50%;
   font-family: "Montserrat", sans-serif;
 }
 .search-bar {
-    background-color: #d9d9d9;
-    width: 32vw;
-    height: 50px;
-    
-    padding-left: 10px;
-    position: absolute;
-    border-style: none;
+  background-color: #d9d9d9;
+  width: 32vw;
+  height: 50px;
+
+  padding-left: 10px;
+  position: absolute;
+  border-style: none;
 }
 .search-bar:active {
-    border-style: none;
+  border-style: none;
 }
 .search-ico {
   position: relative;
@@ -92,57 +87,64 @@ body::after {
   cursor: pointer;
 }
 .search-resize {
-    border: 1px solid pink;
-    margin-left: 20vw;
+  border: 1px solid pink;
+  margin-left: 20vw;
 }
 
-
-
 .table-content {
-    
-    width: 90%;
-    margin: 5vh auto;
-  font-size: 2.5vh;
+  width: 90%;
+  display: flex;
+  margin: 5vh auto;
+  /* font-size: 2.5vh; */
 }
 table,
 th,
 td {
-    background-color: #d9d9d9;
-    /* border: 0px solid black; */
-    border-collapse: collapse;
-    padding: 10px 10px 10px 20px;
+  background-color: #d9d9d9;
+  /* border: 0px solid black; */
+  border-collapse: collapse;
+  padding: 10px 10px 10px 20px;
 }
 th {
-    /* border: 1px solid black; */
-    text-align: left;
-    padding-left: 20px;
+  /* border: 1px solid black; */
+  text-align: left;
+  padding-left: 20px;
 }
 /*----------Image Conatainer----------*/
-.image-container{
-    justify-content: center;
-    /*top right bottom left*/
-    margin: -60vh 0vw 0vh 30vw ;
-    overflow-x: hidden;
+.image-container {
+  justify-content: center;
+  /*top right bottom left*/
+  margin: -60vh 0vw 0vh 30vw;
+  overflow-x: hidden;
 }
-#ghost-ico{
-    /* opacity: 0.4; */
-    width: 100vw;
-    
+#ghost-ico {
+  /* opacity: 0.4; */
+  width: 100vw;
 }
 /*---------------Main Div----------------*/
-.main-div{
-    display: flex;
-    position: relative;
+.main-div {
+  display: flex;
+  position: relative;
 }
-.imageDiv{
-    position: absolute;
-    left : 25%
+.imageDiv {
+  position: absolute;
+  left: 25%;
 }
+.main-container-mobile{
+  display: none;
+}
+
 
 @media only screen and (max-width: 980px) {
   /* body {
     background-color: lightblue;
   } */
+  .main-container-pc{
+    display: none;
+  }
+  .main-container-mobile{
+    display: block;
+  }
   .nav-bar{
     width: 100svw;
     height: 30svh;
@@ -161,15 +163,22 @@ th {
   .main-div{
     width: 100svw;
   }
+  .search{
+    display: flex;
+    align-items: center;
+    margin: auto;
+  }
   .search input{
-    width: 80svw;
-    height: 5svh;
-    font-size: 4svh;
+    width: 60svw;
+    height: 3svh;
+    font-size: 2svh;
   }
   .search-ico{
-    margin-left: 70svw;
-    height: 5svh;
-    width: 7svw;
+    margin-left: 50svw;
+    height: 2svh;
+    width: 5svw;
+  }
+  table{
+    font-size: 1.5svh;
   }
 }
-
