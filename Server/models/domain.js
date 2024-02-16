@@ -8,11 +8,11 @@ const domainSchema = new mongoose.Schema({
     },
     category: {
         type: String,
-        required: true,
+        // required: true,
       },
     lastvisited: {
         type: String,
-        required: true
+        // required: true
     }
 
 }, {

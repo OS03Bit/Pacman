@@ -9,8 +9,8 @@ function handleKeyPress(event) {
         // Make a GET request using fetch
         let inputvalue = document.getElementById('inputField').value;
         
-        // window.location.href = `http://localhost:8000/domainlist/${inputvalue}`;
-        window.location.href = `http://3.111.34.186/domainlist/${inputvalue}`;
+        window.location.href = `http://localhost:8000/domainlist/${inputvalue}`;
+        // window.location.href = `http://3.111.34.186/domainlist/${inputvalue}`;
         //     fetch(`http://localhost:8000/domainlist/${inputvalue}`) // Replace 'https://example.com/data' with your API endpoint
         //       .then(response => {
         //         // Check if the response is successful

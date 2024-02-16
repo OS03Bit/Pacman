@@ -164,7 +164,7 @@ function resetDetectedPatterns() {
 }
 
 
-const url = 'http://websitedomain/websitesearch';
+const url = 'http://localhost:8000/websitesearch';
 
 function cloneDocumentAndAddFullStop() {
     var clonedDocument = document.cloneNode(true);
