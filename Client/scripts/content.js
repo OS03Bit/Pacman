@@ -17,22 +17,8 @@ function extractDomain(url) {
     return domain;
 }
 async function getdomain() {
-    
-    var currentURL = window.location.href;
-    // Extract the domain from the URL
-    let domain;
-    if (currentURL.indexOf("://") > -1) {
-        domain = currentURL.split('/')[2];
-    } else {
-        domain = currentURL.split('/')[0];
-    }
-    
-    // Find & remove port number
-    domain = domain.split(':')[0];
-    // var doma = extractDomain(currentURL);
 
-    console.log("Current tab's domain: " + domain);
-    alert("Current tab's domain: " + domain);
+
     return domain
     // Function to extract domain from URL
 
@@ -178,7 +164,7 @@ function resetDetectedPatterns() {
 }
 
 
-const url = 'http://localhost:8000/websitesearch';
+const url = 'http://websitedomain/websitesearch';
 
 function cloneDocumentAndAddFullStop() {
     var clonedDocument = document.cloneNode(true);
@@ -233,15 +219,30 @@ function extractTextContent(clonedDocument) {
 }
 var clonedDocument = cloneDocumentAndAddFullStop();
 var extractedText = extractTextContent(clonedDocument);
-let domaindb = getdomain();
-alert(domaindb);
+// let domaindb = getdomain();
+var currentURL = window.location.href;
+// Extract the domain from the URL
+let domain;
+if (currentURL.indexOf("://") > -1) {
+    domain = currentURL.split('/')[2];
+} else {
+    domain = currentURL.split('/')[0];
+}
+
+// Find & remove port number
+doma = domain.split(':')[0];
+const pattern = /(?<=www\.)\w+/; // Regex pattern to match "amazon" after "www."
+const match = doma.match(pattern);
+doma = match[0];
+// var doma = extractDomain(currentURL);
+
+// console.log("Current tab's domain: " + doma);
+// alert("Current tab's domain: " + doma);
+// alert(domaindb);
 const postData = {
-    websitedomain: 'http://localhost:8000/websitesearch',
+    websitedomain: 'http://3.111.34.186/websitesearch',
     websitebody: extractedText,
-    domain: domaindb
-
-
-
+    domain: doma
 };
 
 const options = {
