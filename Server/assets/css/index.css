@@ -1,9 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 body {
+  /* margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+  overflow-x: hidden; */
+  
+}
+/* body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  background-repeat: no-repeat, repeat;
+  
+  background-size: cover;
+  z-index: -1;
+} */
+
+/*-----NAV BAR------*/
+body {
   margin: 0;
   padding: 0;
   width: 100vw;
   height: 100vh;
+  background-image: url('../images/Responsible Design Part 3 of 14 Confirm Shaming or Guilt Shaming - Think Design890 × 815.png');
   overflow-y: hidden;
   overflow-x: hidden;
   
@@ -72,6 +97,7 @@ body::after {
 }
 
 
+
 .table-content {
     
     width: 90%;
@@ -112,3 +138,35 @@ th {
     position: absolute;
     left : 25%
 }
+
+@media only screen and (max-width: 980px) {
+  body {
+    background-color: lightblue;
+  }
+  .nav-bar{
+    width: 100svw;
+    height: 30svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav-icon img{
+    width: 200px;
+    height: 200px;
+    
+  }
+  .nav-icon {
+    font-size: 6em;
+  }
+  .main-div{
+    width: 100svw;
+  }
+  .search input{
+    width: 80svw;
+    height: 3svh;
+  }
+  .search-ico{
+    margin-left: 75svw;
+  }
+}
+

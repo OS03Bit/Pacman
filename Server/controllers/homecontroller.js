@@ -30,7 +30,7 @@ module.exports.websitesearch = async (req, res) => {
     let x = req.body.websitebody;
     let y = [];
     for (let i = 0; i < x.length; i++) {
-      let z = x[i];
+      let z = x[i].replace(/₹[\d,.]+/g, '').replace(/\.\s/g, '').replace('₹', '').replace('.', '');
       if (z) {
         y.push(z + '.');
       }
