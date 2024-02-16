@@ -140,9 +140,9 @@ th {
 }
 
 @media only screen and (max-width: 980px) {
-  body {
+  /* body {
     background-color: lightblue;
-  }
+  } */
   .nav-bar{
     width: 100svw;
     height: 30svh;
@@ -163,10 +163,13 @@ th {
   }
   .search input{
     width: 80svw;
-    height: 3svh;
+    height: 5svh;
+    font-size: 4svh;
   }
   .search-ico{
-    margin-left: 75svw;
+    margin-left: 70svw;
+    height: 5svh;
+    width: 8svw;
   }
 }
 
