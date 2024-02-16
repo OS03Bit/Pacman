@@ -10,8 +10,9 @@ module.exports.home = async (req, res) => {
 }
 module.exports.domainlist = async (req, res) => {
   console.log(req.params.id)
+  let search = (req.params.id).toLowerCase();
   let dlist = await Domainlist.find({
-    domain: { $regex: new RegExp("^" + req.params.id ) },
+    domain: { $regex: new RegExp("^" + search ) },
   }).limit(5);
   console.log(dlist);
   return res.render('nextPage', {
@@ -27,6 +28,7 @@ module.exports.alldomainlist = async (req, res) => {
 
 module.exports.websitesearch = async (req, res) => {
   try {
+    console.log(req.body.domain);
     let x = req.body.websitebody;
     let y = [];
     for (let i = 0; i < x.length; i++) {

@@ -10,31 +10,32 @@ function extractDomain(url) {
     return mat ? mat[1] : null;
 }
 
+function extractDomain(url) {
+    var domain;
+    // Find & remove protocol (http, https, ftp) and get domain
+    // console.log(domain)
+    return domain;
+}
 async function getdomain() {
+    
     var currentURL = window.location.href;
-
     // Extract the domain from the URL
-    var domain = extractDomain(currentURL);
+    let domain;
+    if (currentURL.indexOf("://") > -1) {
+        domain = currentURL.split('/')[2];
+    } else {
+        domain = currentURL.split('/')[0];
+    }
+    
+    // Find & remove port number
+    domain = domain.split(':')[0];
+    // var doma = extractDomain(currentURL);
 
     console.log("Current tab's domain: " + domain);
     alert("Current tab's domain: " + domain);
-
-    // Function to extract domain from URL
-    function extractDomain(url) {
-        var domain;
-        // Find & remove protocol (http, https, ftp) and get domain
-        if (url.indexOf("://") > -1) {
-            domain = url.split('/')[2];
-        } else {
-            domain = url.split('/')[0];
-        }
-
-        // Find & remove port number
-        domain = domain.split(':')[0];
-
-        return domain;
-    }
     return domain
+    // Function to extract domain from URL
+
 }
 // getdomain();
 
@@ -232,11 +233,14 @@ function extractTextContent(clonedDocument) {
 }
 var clonedDocument = cloneDocumentAndAddFullStop();
 var extractedText = extractTextContent(clonedDocument);
-
+let domaindb = getdomain();
+alert(domaindb);
 const postData = {
     websitedomain: 'http://localhost:8000/websitesearch',
     websitebody: extractedText,
-    
+    domain: domaindb
+
+
 
 };
 
