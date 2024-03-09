@@ -1,0 +1,18 @@
+body{
+    width: 100vw;
+    height: 100vw;
+    margin: 0;
+    height: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.div{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
